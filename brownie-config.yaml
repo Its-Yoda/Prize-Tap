@@ -1,0 +1,44 @@
+# exclude SafeMath when calculating test coverage
+# https://eth-brownie.readthedocs.io/en/v1.10.3/config.html#exclude_paths
+
+project_structure:
+    build: build
+    contracts: contracts
+    interfaces: interfaces
+    reports: reports
+    scripts: scripts
+    tests: tests
+
+networks:
+    default: development
+    development:
+        gas_limit: max
+        gas_buffer: 1
+        gas_price: 0
+        max_fee: null
+        priority_fee: null
+        reverting_tx_gas_limit: max
+        default_contract_owner: true
+        cmd_settings: null
+    live:
+        gas_limit: auto
+        gas_buffer: 1.1
+        gas_price: auto
+        max_fee: null
+        priority_fee: null
+        reverting_tx_gas_limit: false
+        default_contract_owner: false
+
+compiler:
+    evm_version: istanbul
+    solc:
+        version: 0.8.18
+        optimizer:
+            enabled: false
+            runs: 200
+
+          
+
+reports:
+  exclude_contracts:
+    - Raffle
